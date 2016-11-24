@@ -98,7 +98,7 @@
 <meta property="og:image" content="http://img.blog.csdn.net/20160312223411899">
 <meta property="og:image" content="http://img.blog.csdn.net/20160312225448399">
 <meta property="og:image" content="http://img.blog.csdn.net/20160313155152028">
-<meta property="og:updated_time" content="2016-11-24T14:20:58.821Z">
+<meta property="og:updated_time" content="2016-11-24T14:25:58.624Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python 网络爬虫入门（一）——— 第一个python爬虫实例">
 <meta name="twitter:description" content="这篇博文以前是在csdn上写的，当时写的时候，半年时间阅读量19000，百度搜索python爬虫入门也能维持在前三，挺意外的。直接挪过来了，以下为原文
@@ -391,7 +391,6 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    url =<span class="string">'http://www.weather.com.cn/weather/101190401.shtml'</span></div><div class="line">    html = get_content(url)</div><div class="line">    result = get_data(html)</div><div class="line">    write_data(result, <span class="string">'weather.csv'</span>)</div></pre></td></tr></table></figure>
 <p>然后运行一下：<br>生成的weather.csv文件如下：<br><img src="http://img.blog.csdn.net/20160313155152028" alt="这里写图片描述"></p>
 <p><strong>总结一下，从网页上抓取内容大致分3步</strong>：<br><strong>1、模拟浏览器访问，获取html源代码</strong><br><strong>2、通过正则匹配，获取指定标签中的内容</strong><br><strong>3、将获取到的内容写到文件中</strong></p>
-<p><strong>刚学python爬虫，可能有些理解有错误的地方，请大家批评指正，谢谢！</strong></p>
 
       
     </div>
