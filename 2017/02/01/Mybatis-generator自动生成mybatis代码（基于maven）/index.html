@@ -92,7 +92,7 @@
 <meta property="og:site_name" content="Frank's Blog">
 <meta property="og:description" content="第一次知道Mybatis-generator是大二暑假去学长公司实习的时候，当时新建了一个表，要去完成crud，然后我照着其它model的样子写了对应这个表的model，然后去手敲了一份mapping.xml(很容易就敲错了= =),大概花了3小时才把curd的接口写好交差，学长问我怎么要这么久，知道我写的方法后还笑了一阵。。然后告诉我了这个Mybatis-generator。
   1.在pom">
-<meta property="og:updated_time" content="2017-02-08T15:58:59.077Z">
+<meta property="og:updated_time" content="2017-02-09T14:36:38.595Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mybatis generator 自动生成mybatis代码（基于maven）">
 <meta name="twitter:description" content="第一次知道Mybatis-generator是大二暑假去学长公司实习的时候，当时新建了一个表，要去完成crud，然后我照着其它model的样子写了对应这个表的model，然后去手敲了一份mapping.xml(很容易就敲错了= =),大概花了3小时才把curd的接口写好交差，学长问我怎么要这么久，知道我写的方法后还笑了一阵。。然后告诉我了这个Mybatis-generator。
@@ -358,9 +358,11 @@
 <p>2.配置generatorConfig.xml<br>在 src/resources/main 下（默认位置）新建generatorConfig.xml</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</div><div class="line">&lt;!DOCTYPE generatorConfiguration PUBLIC &quot;-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN&quot; &quot;http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd&quot; &gt;</div><div class="line">&lt;generatorConfiguration&gt;</div><div class="line">    &lt;classPathEntry</div><div class="line">        location=&quot;C:\Users\frank\.m2\repository\mysql\mysql-connector-java\5.1.25\mysql-connector-java-5.1.25.jar&quot; /&gt;        </div><div class="line">    &lt;context id=&quot;context1&quot; targetRuntime=&quot;MyBatis3&quot;&gt;</div><div class="line">         &lt;commentGenerator&gt;  </div><div class="line">            &lt;property name=&quot;suppressDate&quot; value=&quot;true&quot;/&gt;  </div><div class="line">            &lt;!-- 是否去除自动生成的注释 true：是 ： false:否 --&gt;  </div><div class="line">            &lt;property name=&quot;suppressAllComments&quot; value=&quot;true&quot;/&gt;  </div><div class="line">        &lt;/commentGenerator&gt;  </div><div class="line">         &lt;!--数据库链接URL，用户名、密码 --&gt; </div><div class="line">         &lt;jdbcConnection driverClass=&quot;com.mysql.jdbc.Driver&quot;</div><div class="line">            connectionURL=&quot;jdbc:mysql://[ip]:[port]/[database]?useUnicode=true&amp;amp;characterEncoding=UTF-8&quot;</div><div class="line">            userId=[userid] password=[password] &gt; </div><div class="line">         &lt;/jdbcConnection&gt;  </div><div class="line">        &lt;javaTypeResolver&gt;  </div><div class="line">            &lt;property name=&quot;forceBigDecimals&quot; value=&quot;false&quot;/&gt;  </div><div class="line">        &lt;/javaTypeResolver&gt; </div><div class="line">        &lt;!-- 生成模型的包名和位置--&gt;  </div><div class="line">        &lt;javaModelGenerator targetPackage=&quot;model&quot; targetProject=&quot;src\main\java&quot; /&gt;</div><div class="line">        &lt;!-- 生成映射文件的包名和位置--&gt;  </div><div class="line">        &lt;sqlMapGenerator targetPackage=&quot;mapping&quot; targetProject=&quot;src\main\java&quot; /&gt;</div><div class="line">        &lt;!-- 生成DAO的包名和位置--&gt;  </div><div class="line">        &lt;javaClientGenerator targetPackage=&quot;mapper&quot;  targetProject=&quot;src\main\java&quot; type=&quot;XMLMAPPER&quot; /&gt;</div><div class="line">        </div><div class="line">       &lt;!-- 要生成哪些表--&gt;      </div><div class="line">        &lt;table tableName=&quot;menu&quot;  domainObjectName=&quot;Menu&quot; enableCountByExample=&quot;false&quot; enableUpdateByExample=&quot;false&quot; enableDeleteByExample=&quot;false&quot; enableSelectByExample=&quot;false&quot; selectByExampleQueryId=&quot;false&quot;&gt; &lt;/table&gt;</div><div class="line">        &lt;table tableName=&quot;student&quot;  domainObjectName=&quot;Student&quot; enableCountByExample=&quot;false&quot; enableUpdateByExample=&quot;false&quot; enableDeleteByExample=&quot;false&quot; enableSelectByExample=&quot;false&quot; selectByExampleQueryId=&quot;false&quot;&gt; &lt;/table&gt;</div><div class="line">        </div><div class="line">    &lt;/context&gt;</div><div class="line">&lt;/generatorConfiguration&gt;</div></pre></td></tr></table></figure>
 <p>location — 驱动包位置<br>jdbcConnection   — 数据库链接URL、用户名、密码<br>javaModelGenerator—生成模型的包名和位置<br>sqlMapGenerator   —生成的映射文件的包名和位置<br>javaClientGenerator—生成DAO的包名和位置<br>tableName —数据表的名称<br>domainObjectName—生成的实体类的名称</p>
+<p><a href="http://git.oschina.net/free/Mybatis_Utils/blob/master/MybatisGeneator/MybatisGeneator.md" target="_blank" rel="external">MyBatisGenerator详解</a></p>
 <p>3.执行maven命令 </p>
 <p>mvn mybatis-generator:generate<br>或者 run as -&gt;maven build  goals: mybatis-generator:generate </p>
 <p>就可以自动生成对应的pojo类、mapping文件和dao啦</p>
+<p><strong>同一个table只要执行一次就可以了，若多次执行，会覆盖之前的Dao和pojo类，mapping配置文件则会在原来基础上再生成，导致内容重复。</strong></p>
 
       
     </div>
@@ -404,10 +406,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/02/01/MybatisGeneator/" rel="prev" title="MyBatis Geneator配置详解（转）">
-                MyBatis Geneator配置详解（转） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -466,7 +464,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -483,7 +481,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
